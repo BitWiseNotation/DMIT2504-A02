@@ -7,6 +7,7 @@
 //2. command-line user inputs: I need to iuimport dart:io module
 
 import 'dart:io';
+import 'dart:math';
 
 
 void main(){
@@ -15,4 +16,51 @@ void main(){
 
   stdout.write("what is the upper bound of number to pick (inclusive) ? ");
   int highestnum = int.parse(stdin.readLineSync()!);
+  // List<int> stored= lot(count);
+  // print(stored);
+  // generate count numbers  between 1 and largest num
+  Random rng = Random();
+  List<int> LotoNumbers = List.filled(count, 0);
+
+
+  // for(int i =1; i<= count; i++){
+  //   int value;
+  //   value = rng.nextInt(highestnum)+1;
+  //   print(value);
+  // }
+
+    for(int i =0; i< count; i++){
+    int value;
+    value = rng.nextInt(highestnum)+1;
+    if(LotoNumbers.contains(value)){
+      i--;
+    }
+    else{
+      LotoNumbers[i]= value;
+    }
+  }
+  print(LotoNumbers);
+
+
 }
+
+
+// THIS IS MY CODE BUT ONLY WORKS FOR MANUAL INPUTS
+// List<int> lot(i,h){
+//   List<int> storage=[];
+//   for (var a=0; a<i; a++){
+//     print("Enter your number: ");
+//     int number = int.parse(stdin.readLineSync()!);
+//     if (storage.contains(number)){
+//       print("please enter another number");
+//       a--;
+//     }
+//     else if(number>h){
+//       print("The upper limit is $h");
+//     }
+//     else{
+//       storage.add(number);
+//     }
+//   }
+//   return storage;
+// }
