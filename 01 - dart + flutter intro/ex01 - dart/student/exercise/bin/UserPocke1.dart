@@ -46,14 +46,28 @@ class Pocket{
 
   //method for total 
 
+  // double getTotal(){
+  //   final double penny = 0.01;   
+  //   final double nickel = 0.05;
+  //   final double dime = 0.10;
+  //   final double quarter = 0.25;
+  //   final double loonie = 1.00;
+  //   final double twoonie = 2.00;
+  //   double total = penny*pennies + nickel*nickels + dime*dimes + quarter*quarters + loonie * loonies + twoonie*twoonies;
+  //   return(double.parse(total.toStringAsFixed(2)));
+  // }
+
   double getTotal(){
-    final double penny = 0.01;   
-    final double nickel = 0.05;
-    final double dime = 0.10;
-    final double quarter = 0.25;
-    final double loonie = 1.00;
-    final double twoonie = 2.00;
-    double total = penny*pennies + nickel*nickels + dime*dimes + quarter*quarters + loonie * loonies + twoonie*twoonies;
+    final Map values = <String,double>{
+      //key
+      'penny': 0.01,
+      'nickel': 0.05,
+      'dime': 0.10,
+      'quarter': 0.25,
+      'loonie': 1.00,
+      'twoonie': 2.00
+    };
+    double total = values['penny']*pennies + values['nickel']*nickels + values['dime']*dimes + values['quarter']*quarters + values['loonie'] * loonies + values['twoonie']*twoonies;
     return(double.parse(total.toStringAsFixed(2)));
   }
 
