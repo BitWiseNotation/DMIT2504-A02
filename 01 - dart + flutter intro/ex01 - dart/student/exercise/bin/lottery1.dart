@@ -20,8 +20,20 @@ void main(){
   // print(stored);
   // generate count numbers  between 1 and largest num
   Random rng = Random();
-  List<int> LotoNumbers = List.filled(count, 0);
+  //List<int> LotoNumbers = List.filled(count, 0); Used for list  method only 
+  Set<int> LotoNum = {};   // using for set method
 
+  // Set way of doing things 
+  for(int i =0; i<count; i++){
+    int value;
+    value = rng.nextInt(highestnum)+1;
+    if(LotoNum.length<6){
+      LotoNum.add(value);
+    }
+    else{
+      i--;
+    }
+  }
 
   // for(int i =1; i<= count; i++){
   //   int value;
@@ -29,17 +41,21 @@ void main(){
   //   print(value);
   // }
 
-    for(int i =0; i< count; i++){
-    int value;
-    value = rng.nextInt(highestnum)+1;
-    if(LotoNumbers.contains(value)){
-      i--;
-    }
-    else{
-      LotoNumbers[i]= value;
-    }
-  }
-  print(LotoNumbers);
+  // Incremental method
+  //   for(int i =0; i< count; i++){
+  //   int value;
+  //   value = rng.nextInt(highestnum)+1;
+  //   if(LotoNumbers.contains(value)){
+  //     i--;
+  //   }
+  //   else{
+  //     LotoNumbers[i]= value;
+  //   }
+  // }
+
+
+  
+  print(LotoNum);
 
 
 }
