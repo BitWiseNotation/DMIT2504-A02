@@ -11,3 +11,19 @@ void main(List<String> arguments) async {
   dogData = await getJSON('https://dog.ceo/api/breeds/list/all');
   print(dogData['message']['collie'][0]);
 }
+
+
+class User {
+  static final User _user = User._();
+
+  factory User() => _user;
+
+  User._();
+}
+
+void main() {
+  var a = User();
+  var b = User();
+
+  print(identical(a, b)); // true
+}
