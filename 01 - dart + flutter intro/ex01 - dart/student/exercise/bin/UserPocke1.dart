@@ -4,8 +4,6 @@
 // I need some sort of function to validate negative value is not allowed
 
 
-import 'dart:async';
-import 'dart:ffi';
 import 'dart:io';
 
 
@@ -26,7 +24,7 @@ void main(){
     //print(Values);
     Pocket Mypocket = Pocket(Values[0], Values[1], Values[2], Values[3], Values[4], Values[5]);
     double total = Mypocket.getTotal();
-    print("\$"+ total.toStringAsFixed(2));
+    print("\$${total.toStringAsFixed(2)}");
 }
 
 

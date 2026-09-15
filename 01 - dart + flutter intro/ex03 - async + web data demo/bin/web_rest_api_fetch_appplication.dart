@@ -13,17 +13,3 @@ void main(List<String> arguments) async {
 }
 
 
-class User {
-  static final User _user = User._();
-
-  factory User() => _user;
-
-  User._();
-}
-
-void main() {
-  var a = User();
-  var b = User();
-
-  print(identical(a, b)); // true
-}
